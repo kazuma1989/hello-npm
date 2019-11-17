@@ -1,0 +1,16 @@
+{
+  "name": "@kazuma1989/hello-npm",
+  "version": "0.0.4",
+  "description": "npm trial",
+  "main": "index.js",
+  "bin": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hello",
+    "npm"
+  ],
+  "author": "kazuma1989",
+  "license": "MIT"
+}
