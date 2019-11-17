@@ -15,9 +15,5 @@
     "npm"
   ],
   "author": "kazuma1989",
-  "license": "MIT",
-  "private": true,
-  "workspaces": [
-    "sub-package"
-  ]
+  "license": "MIT"
 }

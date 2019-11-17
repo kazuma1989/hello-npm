@@ -14,7 +14,7 @@ npx @kazuma1989/hello-npm
 npx from GitHub:
 
 ```bash
-npx kazuma1989/hello-npm#master
+npx kazuma1989/hello-npm
 # Hello npm!
 ```
 
@@ -38,6 +38,8 @@ You will get an email from npm when success.
 
 # What I learned
 
+### With npm
+
 - Sign in before publishing.  
   Sign up via the npm website and run `npm adduser` in CLI terminal.
 - Files to publish are not necessarily versioned by Git.
@@ -50,3 +52,14 @@ You will get an email from npm when success.
   Write the `.npmignore` file carefully or follow the pattern in which paths are ignored by default.  
   I usually use a `._*` pattern for my local files without publishing or versioning.  
   Detail: http://npm.github.io/publishing-pkgs-docs/publishing/the-npmignore-file.html
+
+### With GitHub
+
+- You can use packages directly from GitHub without publishing to npm!  
+  Use `npm install username/repo-name` format to reference the default branch or `npm install username/repo-name#branch` to specify some branch.
+  - But sub directories are not referenced this way.  
+    The above commands just downloads the tarball from the URL which is resolved from GitHub repo name, so without a URL from which we can download sub directories it is impossible to use sub directories (like Babel packages) as packages.
+- **npx** has an escape hatch where we can use sub directories like packages.  
+  In `package.json` the `bin` field may have multiple keys, so specify sub commands to point to binaries in sub directories, and call the sub commands with `npx -p username/repo-name sub-command`.
+- GitHub Gist can also be used as a package.  
+  Even though Gist cannot have directory structures, the `dependencies` field in `package.json` works well!
